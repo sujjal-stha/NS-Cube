@@ -68,14 +68,26 @@ interface DataContextType {
     questions: Question[];
     notes: Notes[];
     news: NewsArticle[];
-    addQuestions: (question: Omit<Questions, 'Likes' |'views' | 'createdAt'>) => void;
-    addAnswer: (questionId: string, answer: Answer) => void;
+    addQuestions:(question: Omit<Question, 'likes' |'views' | 'createdAt' | 'id' | 'answers'>) => void;
+    addAnswer: (questionId: string, answer:Omit<Answer, 'likes' | 'createdAt' | 'id'>) => void;
     likeQuestion: (questionId: string) => void;
     likeAnswer: (questionId: string, answerId: string) => void;
-    addNotes: (note: Notes) => void;
+    addNotes: (note: Omit<Notes, 'likes' | 'createdAt' | 'id' | 'downloads'>) => void;
     likeNotes: (noteId: string) => void;
     saveNotes: (noteId: string) => void;
-    getUserStats: () => { questions: number; notes: number; news: number };
+    getUserStats: () => { questionsAsked: number; notesUploaded: number; totalLikes: number ; rank: number};
 }
-export function DataProvider(){}
-export default function DataContext(){}
+
+const DataContext = createContext<DataContextType | undefined>(undefined);
+
+export function DataProvider({ children }: { children: ReactNode }) {
+    const { user } = useAuth();
+
+}
+
+
+
+
+
+
+

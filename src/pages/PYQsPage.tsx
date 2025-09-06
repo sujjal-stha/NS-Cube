@@ -269,11 +269,78 @@ rating: 4.5,
         </div>
       </div>
 {}
+ <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredPYQs.length > 0 ? (
+          filteredPYQs.map((pyq) => (
+            <div key={pyq.id} className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <FileText className="h-8 w-8 text-blue-600" />
+                  <div>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(pyq.faculty)}`}>
+                      {pyq.subject}
+                    </span>
+                    <span className="ml-2 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                      Class {pyq.class}
+                    </span>
+                  </div>
+                </div>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeColor(pyq.type)}`}>
+                  {pyq.type}
+                </span>
+              </div>
+
+              <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{pyq.title}</h3>
+
+              <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
+                <span className="font-medium">Year: {pyq.year}</span>
+                <div className="flex items-center space-x-1">
+                  {renderStars(pyq.rating)}
+                  <span className="text-xs">({pyq.rating})</span>
+                </div>
+              </div>
+               <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{pyq.title}</h3>
+
+              <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
+                <span className="font-medium">Year: {pyq.year}</span>
+                <div className="flex items-center space-x-1">
+                  {renderStars(pyq.rating)}
+                  <span className="text-xs">({pyq.rating})</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center space-x-1">
+                  <Download className="h-3 w-3" />
+                  <span>{pyq.download} downloads</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Clock className="h-3 w-3" />
+                  <span>{formatTimeAgo(pyq.createdAt)}</span>
+                </div>
+              </div>
+
+              <div className="flex space-x-2">
+                <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-sm font-medium transition-colors flex items-center justify-center space-x-1">
+                  <Download className="h-3 w-3" />
+                  <button onClick={()=>window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "_blank")}>Download</button>
+                </button>
+                <button className="px-3 py-2 border border-gray-300 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
+                  <Eye className="h-3 w-3" />
+                </button>
+              </div>
+              
+            </div>
+          ))
+        }
+      
+        
+        
+
         
 </div>
 
 
-
+</div>
   )
   };
-

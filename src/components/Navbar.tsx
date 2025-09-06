@@ -41,8 +41,66 @@ export default function Navbar(){
             <Link
                 to="/"
           className="flex items-center space-x-2 text-gray-800 hover:text-green-600">
-                
-        
+            <img
+            src="/logo.png"
+            alt="StudyNet"
+            className="h-12 w-12 mr-1"
+          />
+          <span className="text-xl font-bold">StudyNet</span>
+        </Link>
+                  </div>
+
+          {}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
+                    isActive
+                      ? 'bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 shadow-md'
+                      : 'text-gray-600 hover:text-purple-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50'
+                  }`}>
+                  <Icon className="h-4 w-4" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </div>
+          {}
+          <div className="flex items-center space-x-4">
+          {}
+          <DNDButton />
+            
+            {
+            user && (
+              <div className="hidden md:flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-200 to-blue-200 rounded-full flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                    <User className="h-4 w-4 text-gray-600" />
+                  </div>
+                  <div className="text-sm">
+                    <p className="font-medium text-gray-900">{user.name}</p>
+                    <p className={`text-xs ${facultyColors[user.faculty] || 'text-gray-600'}`}>
+                      Class {user.class} • {user.faculty}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="p-2 text-gray-400 hover:text-red-600 rounded-full hover:bg-red-50 transition-all duration-300 transform hover:scale-110">
+                  <LogOut className="h-4 w-4" />
+                </button>
+              </div>
+              )
+            }
+
+          
+
+
         </nav>
   )
 }

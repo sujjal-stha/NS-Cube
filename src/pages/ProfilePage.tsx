@@ -32,7 +32,7 @@ export default function ProfilePage(){
   return (
 
     <div className="max-w-4xl mx-auto p-6">
-        {}
+        
         <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6">
              <div className="flex items-center space-x-6">
                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
@@ -57,7 +57,7 @@ export default function ProfilePage(){
                              <button
               className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors"
               type="button"
-              onClick={() => { /* No function, just sample button */ }}
+              onClick={() => {}}
             >
               <Edit className="h-4 w-4" />
               <span>Edit Profile</span>
@@ -71,14 +71,56 @@ export default function ProfilePage(){
         </div>
         {}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors"
-              type="button"
-              onClick={() => { /* No function, just sample button */ }}
-            >
-              <Edit className="h-4 w-4" />
-              <span>Edit Profile</span>
-            </button>
+                <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+                     <div className="text-2xl font-bold text-blue-600">{user.points}</div>
+                      <div className="text-sm text-gray-600 flex items-center justify-center space-x-1">
+                             <Trophy className="h-3 w-3" />
+            <span>Points</span>
+                        </div>
+                    </div>
+                     <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+                        <div className="text-2xl font-bold text-green-600">{stats.questionsAsked}</div>
+                        <div className="text-sm text-gray-600 flex items-center justify-center space-x-1">
+                            <MessageSquare className="h-3 w-3" />
+            <span>Questions</span>
+                            </div>
+                        </div>
+                         <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">\
+                          <div className="text-2xl font-bold text-orange-600">{stats.notesUploaded}</div>
+                           <div className="text-sm text-gray-600 flex items-center justify-center space-x-1">
+                            <BookOpen className="h-3 w-3" />
+            <span>Notes</span>
+                            </div>
+                            </div>
+                            <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+                                 <div className="text-2xl font-bold text-red-600">{stats.totalLikes}</div>
+                                  <div className="text-sm text-gray-600 flex items-center justify-center space-x-1">
+                                     <Heart className="h-3 w-3" />
+            <span>Likes</span>
+                                  </div>
+
+                                </div>
             </div>
+            {}
+            <div className="bg-white rounded-lg border border-gray-200">
+                     <div className="border-b border-gray-200">
+                        <nav className="flex space-x-8 px-6">
+                             <button className="py-4 px-1 border-b-2 border-blue-500 text-blue-600 font-medium">
+              My Questions ({userQuestions.length})
+            </button>
+            <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium">
+              My Notes ({userNotes.length})
+            </button>
+             <button className="py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 font-medium">
+              Saved Items
+            </button>
+                            </nav>
+                        </div>
+                         <div className="p-6">
+                         <div className="space-y-4">
+                        {userQuestions}
+                            </div>
+                            </div>
+                </div>
   );
 }
