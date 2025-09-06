@@ -83,7 +83,7 @@ rating: number;
         rating: 4.5,
     },
  {
-   id: 'title',
+   id: '5',
    title: 'mathmatics pyq',
    calss: '12',
    subject: 'mathematics',
@@ -95,6 +95,20 @@ rating: number;
    download: '',
    createdAt: 0,
    rating: 4.5,
+ },
+ {
+  id: '6',
+  title: ' mathmatics pyq',
+  calss: '12',
+  subject: 'mathematics', 
+  faculty: 'science',
+  type: ' Board exam',
+  year: '2024',
+  fileUrl: '',
+  filetype: ' pdf',
+  download: ' 400'
+  createdAt: 0,
+  rating: 4.5,
  },
 
   ];
@@ -161,7 +175,7 @@ rating: number;
         <p className="text-gray-600">Access previous year questions and important questions for {user?.faculty} faculty</p>
       </div>
       {}
-      <div className=''>
+      <div className='min-h-'>
 
 
       </div>

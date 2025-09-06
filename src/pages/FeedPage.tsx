@@ -85,7 +85,56 @@ export default function FeedPage(){
             <MessageSquare className="h-4 w-4" />
           <span> Recent Q&A</span>
           </button>
+           <button
+          onClick={() => setActiveTab('notes')}
+          className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+            activeTab === 'notes'
+              ? 'bg-white text-green-600 shadow-lg'
+              : 'text-gray-600 hover:text-green-700 hover:bg-white/50'
+          }`}
+        >
+          <BookOpen className="h-4 w-4" />
+          <span> Latest Notes</span>
+          </button>
                     </div>
+                    {}
+                    <div className="space-y-6">
+                    {activeTab === 'hot' && (
+                      <div>
+                        <div className="flex items-center space-x-2 mb-4">
+                         <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center">
+                        <TrendingUp className="h-4 w-4 text-white" />
+                          </div>
+                          <h2 className="text-lg font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">🔥 Trending Questions</h2>
+                          </div>
+                          {hotQuestions.length > 0 ? (
+                            <div className="space-y-4">
+                                {hotQuestions.map((questions,index)=>(
+                                  <div key={question.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 transform hover:scale-100 hover:-translate-y-2">
+                                      <div className="flex items-start space-x-3">
+                                        <div className="bg-gradient-to-r from-orange-400 to-red-500 rounded-xl p-3 flex-shrink-0 shadow-lg">
+                                          <span className="text-white font-bold text-sm">#{index + 1}</span>
+                                          </div>
+                                          <div className="flex-1 min-w-0">
+                                           <div className="flex items-center space-x-2 mb-2">
+                                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(question.faculty)}`}>
+                            {question.subject}
+                          </span>
+                           <div className="flex items-center space-x-1 text-xs text-gray-500">
+                                     <Clock className="h-3 w-3" />
+                                     <span>{formatTimeAgo(question.createdAt)}</span>
+                            </div>
+                                            </div>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                              </div>
+                          )}
+                        </div>
+                    )}
+                      </div>
             </div>
 
   )

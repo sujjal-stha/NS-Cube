@@ -2,6 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen {
+@media (max-width : 640px) {
+  .container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
+  .text-responsive{
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .mobile-spacing{
+    padding: 0.75rem;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
