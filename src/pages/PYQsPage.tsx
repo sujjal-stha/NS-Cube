@@ -6,18 +6,18 @@ import { useAuth } from '../contexts/AuthContext';
 interface Pyq{
   id: String;
   title: string;
-  calss: string;
+  class: string;
 subject: any;
   faculty: any;   
 type: ' Board exam' | ' important question' | 'Model question';
  year :string;
  fileUrl: string;
-filetype: ' pdf' | ' doc';
- download: string; 
+filetype: 'pdf' | ' doc';
+ download: number; 
 createdAt: number;
 rating: number;
 };
-  export default function pyqpage(){
+  export default function PYQspage(){
     const { user } = useAuth();
     const [ filtersubject, setFilterSubject] = useState('');
     const [ filterYear, setFilterYear] = useState('');
@@ -27,43 +27,44 @@ rating: number;
   
       const PYQs: Pyq[] = [
     {
-        id: '1',
-        title: 'Physics PYQ 2023',
-        calss: '12',
-        subject: 'Physics',
-        faculty: 'science',
-        year: '2023',
-        fileUrl: '',
-        filetype: 'pdf',
-        download: '587',
-        createdAt: Date.now(),
-        rating: 4.5
-
+      id: '1',
+      title: 'Physics PYQ 2023',
+      class: '12',
+      subject: 'Physics',
+      faculty: 'science',
+      year: '2023',
+      fileUrl: '',
+      filetype: 'pdf',
+      download: 587,
+      createdAt: Date.now(),
+      rating: 4.5,
+      type: ' Board exam'
     },
    {
-        id: '2',
-        title: 'Chemistry PYQ 2022',
-        calss: '12',
-        Subject: 'Chemistry',
-        year: '2023',
-        fileUrl: '',
-        filetype: 'pdf',
-        download: '393',
-        createdAt: Date.now(),
-        rating: 4.5
-
-    },
+     id: '2',
+     title: 'Chemistry PYQ 2022',
+     class: '12',
+     subject: 'Chemistry',
+     faculty: 'science',
+     year: '2023',
+     fileUrl: '',
+     filetype: 'pdf',
+     download: 393,
+     createdAt: Date.now(),
+     rating: 4.5,
+     type: ' Board exam'
+   },
     {
         id: '3',
         title: 'Mathematics PYQ 2021',
-        calss: '12',
-        Subject: 'Mathematics',
-        faculty: 'science',                        ///download garna skane file.
-        type: 'Board exam',
+        class: '12',
+        subject: 'Mathematics',
+        faculty: 'science',                        ///download garna skane file
+        type: ' Board exam',
         year: '2023',
         fileUrl: '',
         filetype: 'pdf',
-        download: '280',
+        download: 280,
         createdAt: Date.now(),
         rating: 4.5,
         
@@ -72,44 +73,72 @@ rating: number;
         id: '4',
         title: 'Biology PYQ 2020',
         class: ' 12',
-        Subject: 'Biology', 
+        subject: 'Biology',
         faculty: 'science',
-        type: 'BOard exam',
+        type: ' Board exam',
         year: '2023',
         fileUrl: '',
         filetype: 'pdf',
-        download: '250',
+        download: 250,
         createdAt: Date.now(),
         rating: 4.5,
     },
  {
    id: '5',
    title: 'mathmatics pyq',
-   calss: '12',
+   class: '12',
    subject: 'mathematics',
    faculty: 'science',
    type: ' Board exam',
    year: '',
    fileUrl: '',
-   filetype: ' pdf',
-   download: '',
-   createdAt: 0,
+   filetype:'pdf',
+   download: 403,
+   createdAt: Date.now(),
    rating: 4.5,
  },
  {
   id: '6',
   title: ' mathmatics pyq',
-  calss: '12',
+  class: '12',
   subject: 'mathematics', 
   faculty: 'science',
   type: ' Board exam',
   year: '2024',
   fileUrl: '',
-  filetype: ' pdf',
-  download: ' 400'
-  createdAt: 0,
+  filetype: 'pdf',
+  download: 400,
+  createdAt: Date.now(),
   rating: 4.5,
  },
+ {
+id: '7',
+title: 'mathmatics pyq',
+class: '12',
+subject: 'mathematics',
+faculty: 'science',
+type: ' Board exam', 
+year: '2023',
+fileUrl: '',
+filetype: 'pdf',
+download: 700,
+createdAt: Date.now(),
+rating: 4.5,
+ },
+{
+  id: '8',
+  title: 'mathmatics pyq',
+  class: '11',
+  subject: 'mathmatics',
+  faculty: 'science',
+  type: ' important question',
+  year: '2022',
+  fileUrl: '',
+  filetype: 'pdf',
+  download: 300,
+  createdAt: Date.now(),
+  rating: 5
+},
 
   ];
 
@@ -157,7 +186,7 @@ rating: number;
     return colors[type as keyof typeof colors] || 'text-gray-600 bg-gray-50';
   };
 
-  const renderStars = (rating: number) => {
+ const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
@@ -175,19 +204,76 @@ rating: number;
         <p className="text-gray-600">Access previous year questions and important questions for {user?.faculty} faculty</p>
       </div>
       {}
-      <div className='min-h-'>
-
-
-      </div>
-
-
-
+<div className="flex flex-col lg:flex-row gap-4 mb-6">
+        <div className="flex-1 relative">
+          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+          <input
+            type="text"
+            placeholder="Search PYQs and important questions..."
+  value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          />
         </div>
-
+    
+     <select
+          value={filtersubject}
+          onChange={(e) => setFilterSubject(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option value="">All Subjects</option>
+          {subjects.map(subject => (
+            <option key={subject} value={subject}>{subject}</option>
+            ))}
+        </select>
+        <select
+          value={filterYear}
+          onChange={(e) => setFilterYear(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option value="">All Years</option>
+          {years.map(year => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+          </select>
+         <select
+          value={filterType}
+          onChange={(e) => setFilterType(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option value="">All Types</option>
+          {types.map(type => (
+            <option key={type} value={type}>{type}</option>
+          ))}
+        </select>
+      </div>
+      {}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+          <div className="text-2xl font-bold text-blue-600">{filteredPYQs.length}</div>
+          <div className="text-sm text-gray-600">Available Papers</div>
+        </div>
+        <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+          <div className="text-2xl font-bold text-green-600">{subjects.length}</div>        
+          <div className="text-sm text-gray-600">Subjects Covered</div>
+        </div>
+        <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+          <div className="text-2xl font-bold text-orange-600">{years.length}</div>
+          <div className="text-sm text-gray-600">Years Available</div>
+        </div>
+        <div className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+          <div className="text-2xl font-bold text-purple-600">
+            {filteredPYQs.reduce((acc, Pyq) => acc + Pyq.download, 0)}
+          </div>
+          <div className="text-sm text-gray-600">Total Downloads</div>
+        </div>
+      </div>
+{}
+        
+</div>
 
 
 
   )
   };
 
-  

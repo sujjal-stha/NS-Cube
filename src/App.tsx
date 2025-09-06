@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -10,6 +11,7 @@ import PYQsPage from './pages/PYQsPage';
 import NewsPage from './pages/NewsPage';
 import ProfilePage from './pages/ProfilePage';
 import Layout from './components/Layout';
+
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { DataProvider } from './contexts/DataContext';
 
@@ -22,8 +24,9 @@ function AppRoutes() {
       </div>
     );
   }
-  return (+
-'`<Routes>{}
+  return (
+  <Routes>
+      {}
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/feed" replace />} />
       <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to="/feed" replace />} />
@@ -40,7 +43,7 @@ function AppRoutes() {
       ) : (
         <Route path="*" element={<Navigate to="/" replace />} />
       )}
-    </Routes>
+  </Routes>
   );
 }
 function App() {  return (

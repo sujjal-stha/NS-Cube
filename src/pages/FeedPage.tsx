@@ -11,7 +11,7 @@ export default function FeedPage(){
     const [activeTab, setActiveTab] = useState<'hot' | 'questions' | 'notes'>('hot');
     
     const facultyQuestions = questions.filter(q => q.faculty === user?.faculty);
-  const facultyNotes = notes.filter(n => n.faculty === user?.faculty);
+  const facultyNotes = notes.filter( n => n.faculty === user?.faculty);
 
   const hotQuestions = facultyQuestions
     .sort((a, b) => (b.likes + b.views * 0.1) - (a.likes + a.views * 0.1))
@@ -110,32 +110,177 @@ export default function FeedPage(){
                           {hotQuestions.length > 0 ? (
                             <div className="space-y-4">
                                 {hotQuestions.map((questions,index)=>(
-                                  <div key={question.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 transform hover:scale-100 hover:-translate-y-2">
+                                  <div key={questions.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-2xl hover:border-orange-300 transition-all duration-300 transform hover:scale-100 hover:-translate-y-2">
                                       <div className="flex items-start space-x-3">
                                         <div className="bg-gradient-to-r from-orange-400 to-red-500 rounded-xl p-3 flex-shrink-0 shadow-lg">
                                           <span className="text-white font-bold text-sm">#{index + 1}</span>
                                           </div>
                                           <div className="flex-1 min-w-0">
                                            <div className="flex items-center space-x-2 mb-2">
-                                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(question.faculty)}`}>
-                            {question.subject}
+                                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(questions.faculty)}`}>
+                            {questions.subject}
                           </span>
                            <div className="flex items-center space-x-1 text-xs text-gray-500">
                                      <Clock className="h-3 w-3" />
-                                     <span>{formatTimeAgo(question.createdAt)}</span>
+                                     <span>{formatTimeAgo(questions.createdAt)}</span>
                             </div>
                                             </div>
-                                            
+                                            <h3 className="font-medium text-gray-900 mb-2">{questions.title}</h3>
+                                            <p className="text-gray-600 text-sm line-clamp-2">{questions.content}</p>
+                                             <div className="flex items-center justify-between mt-4">
+                                              <div className="flex items-center space-x-4">
+                                                <button
+                              onClick={() => likeQuestion(questions.id)}
+                              className={`flex items-center space-x-1 transition-colors ${
+                                questions.liked ? 'text-red-500' : 'text-gray-500 hover:text-red-500'
+                              }`}
+                            >
+                              <Heart className={`h-4 w-4 ${questions.liked ? 'fill-current' : ''}`} />
+                              <span className="text-sm">{questions.likes}</span>
+                            </button>
+
+                             <div className="flex items-center space-x-1 text-gray-500">
+                                 <Eye className="h-4 w-4" />
+                              <span className="text-sm">{questions.views}</span>
+                              </div>
+                              <div className="flex items-center space-x-1 text-gray-500">
+                                 <MessageSquare className="h-4 w-4" />
+                              <span className="text-sm">{questions.answers.length}</span>
+                                </div>
+                                                </div>
+                                                <Link
+                            to="/questions"
+                            className="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors duration-300 hover:scale-105 transform"
+                          >
+                            View Discussion 💬
+                          </Link>
+                                              </div>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
                               </div>
+                          ):(
+                            <div className="text-center py-8 text-gray-500">
+                                <div className="text-6xl mb-4">🤔</div>
+                                 <p>No trending questions in your faculty yet.</p>
+                <p className="text-sm mt-2">Be the first to ask something interesting!</p>
+                              </div>
                           )}
                         </div>
                     )}
+
+                    {activeTab === 'questions' && (
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+                               <MessageSquare className="h-4 w-4 text-white" />
+                              </div>
+                               <h2 className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">💬 Recent Questions</h2>
+                            </div>
+                            <Link
+                to="/questions"
+                className="text-purple-600 hover:text-purple-700 text-sm font-medium transition-all duration-300 hover:scale-105 transform"
+              >
+                View All
+              </Link>
+                          </div>
+                          {facultyQuestions.length > 0 ?(
+                             <div className="space-y-4">
+                              {facultyQuestions.slice(0,3).map((questions)=>(
+                                 <div key={questions.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                    <div className="flex items-center space-x-2 mb-2">
+                                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(questions.faculty)}`}>
+                        {questions.subject}
+                      </span>
+                       <div className="flex items-center space-x-1 text-xs text-gray-500">
+                                <Clock className="h-3 w-3" />
+                        <span>{formatTimeAgo(questions.createdAt)}</span>
+                        </div>
+                                      </div>
+                                      <h3 className="font-medium text-gray-900 mb-2">{questions.title}</h3>
+                                       <p className="text-gray-600 text-sm mb-3 line-clamp-2">{questions.content}</p>
+                                       <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span>by {questions.author.name}</span>
+                                        <div className="flex items-center space-x-1">
+                                          <Heart className="h-3 w-3" />
+                        <span>{questions.likes}</span>
+                                          </div>
+                                          <div className="flex items-center space-x-1">
+                                           <MessageSquare className="h-3 w-3" />
+                        <span>{questions.answers.length} answers</span>
+                                            </div>
+                                        </div>
+                                  </div>
+                              ))}
+                              </div>
+                          ):(
+                            <div className="text-center py-8 text-gray-500">
+                               <div className="text-6xl mb-4">❓</div>
+                <p>No questions in your faculty yet.</p>
+                <p className="text-sm mt-2">Start the conversation!</p>
+                              </div>
+                          )}
+                        </div>
+                    )}
+                    {activeTab === 'notes' && (
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <div className="flex items-center space-x-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                               <BookOpen className="h-4 w-4 text-white" />
+                              </div>
+                              <h2 className="text-lg font-semibold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">📝 Latest Notes</h2>
+                            </div>
+                             <Link
+                to="/notes"
+                className="text-green-600 hover:text-green-700 text-sm font-medium transition-all duration-300 hover:scale-105 transform"
+              >
+                View All
+              </Link>
+                          </div>
+                          {facultyNotes.length > 0 ? (
+                             <div className="space-y-4">
+                                {facultyNotes.slice(0,3).map((note)=>(
+                                   <div key={note.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                         <div className="flex items-center space-x-2 mb-2">
+                                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(note.faculty)}`}>
+                        {note.subject}
+                      </span>
+                      <span className="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                        Class {note.class}
+                      </span>
+                                            <div className="flex items-center space-x-1 text-xs text-gray-500">
+                                               <Clock className="h-3 w-3" />
+                        <span>{formatTimeAgo(note.createdAt)}</span>
+                                              </div>
+                                          </div>
+                                    <h3 className="font-medium text-gray-900 mb-2">{note.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3">{note.description}</p>
+                     <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span>by {note.author.name}</span>
+                                    <div className="flex items-center space-x-1">
+                                        <Heart className="h-3 w-3" />
+                        <span>{note.likes}</span>
+                                      </div>
+                                       <span>{note.downloads} downloads</span>
                       </div>
+                                    </div>
+
+                                ))}
+                              </div>
+                          ):(
+                             <div className="text-center py-8 text-gray-500">
+                               <div className="text-6xl mb-4">📚</div>
+                <p>No notes available in your faculty yet.</p>
+                <p className="text-sm mt-2">Share your knowledge with others!</p>
+                              </div>
+                          )}
+                        </div>
+                    )}
+              </div>
             </div>
 
-  )
+  );
 }
