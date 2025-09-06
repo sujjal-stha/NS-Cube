@@ -117,6 +117,13 @@ rating: number;
         subject: 'Business Studies',
         faculty: 'Management',
         type: 'Board exam',
+        year: '2023',
+        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
+        filetype: 'pdf',
+        download: 'Download',
+        createdAt: Date.now(),
+        rating: 4.5,
+
 
     };
 

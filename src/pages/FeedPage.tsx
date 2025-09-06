@@ -46,6 +46,10 @@ export default function FeedPage(){
                         <h1 className="text-2xl font-bold mb-2">
           Welcome back, {user?.name}! 📖
         </h1>
+        <p className="text-white/90">
+          Stay updated with the latest discussions and resources in {user?.faculty}
+        </p>
+        
                     </div>
                 </div>
             </div>
