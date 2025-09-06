@@ -1,17 +1,18 @@
-import React { useState } from 'react';
-import {useAuth } from '../contexts/AuthContext';  
-import { FileText, Download, Search, Clock, Eye, Star, user } from 'lucide-react';
+import React, { useState } from 'react';
+import { FileText, Download, Search, Clock, Eye, Star, User } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';  
 
-interface PYqs ={
+
+interface Pyq{
   id: String;
   title: string;
   calss: string;
-  Subject: string;
-  faculty: String;
-  type: ' Board exam' | ' important question' | 'Model question';
+subject: any;
+  faculty: any;   
+type: ' Board exam' | ' important question' | 'Model question';
  year :string;
  fileUrl: string;
- filetype: ' pdf'| ' doc';
+filetype: ' pdf' | ' doc';
  download: string; 
 createdAt: number;
 rating: number;
@@ -22,18 +23,17 @@ rating: number;
     const [ filterYear, setFilterYear] = useState('');
     const [ filterType, setFilterType] = useState('');
     const [ filterClass, setFilterClass] = useState('');
-    
-  };
-  const PYQs: PYqs[] = [
+      const [ searchTerm, setSearchTerm] = useState('');
+  
+      const PYQs: Pyq[] = [
     {
         id: '1',
         title: 'Physics PYQ 2023',
         calss: '12',
-        Subject: 'Physics',
+        subject: 'Physics',
         faculty: 'science',
-        type: 'Board exam',
         year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
+        fileUrl: '',
         filetype: 'pdf',
         download: '587',
         createdAt: Date.now(),
@@ -46,7 +46,7 @@ rating: number;
         calss: '12',
         Subject: 'Chemistry',
         year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
+        fileUrl: '',
         filetype: 'pdf',
         download: '393',
         createdAt: Date.now(),
@@ -61,7 +61,7 @@ rating: number;
         faculty: 'science',                        ///download garna skane file.
         type: 'Board exam',
         year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
+        fileUrl: '',
         filetype: 'pdf',
         download: '280',
         createdAt: Date.now(),
@@ -74,73 +74,43 @@ rating: number;
         class: ' 12',
         Subject: 'Biology', 
         faculty: 'science',
-        type : 'BOard exam',
+        type: 'BOard exam',
         year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
+        fileUrl: '',
         filetype: 'pdf',
         download: '250',
         createdAt: Date.now(),
         rating: 4.5,
     },
-    {
-        id: '5',
-        title: 'English PYQ 2019',
-        Class: '12',
-        subject: 'English',
-        faculty: 'All',
-        type: 'Board exam', ``
-        year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
-        filetype: 'pdf',
-        download: '159',
-        createdAt: Date.now(),
-        rating: 4.5,
-    },
-    {
-      id: '6',
-      tile: 'Accountancy PYQ 2018',
-      class: '12',
-      subject: 'Accountancy',
-      faculty: 'mnagement';
-      type: 'Board exam',
-        year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
-        filetype: 'pdf',
-        download: '390',
-        createdAt: Date.now(),
-        rating: 4.5,
-    },
-    {
-        id : '7',
-        tite: ' Business Studies PYQ 2017',
-        class: ' 11',
-        subject: 'Business Studies',
-        faculty: 'Management',
-        type: 'Board exam',
-        year: '2023',
-        fileUrl: 'https://example.com/physics-pyq-2023.pdf',
-        filetype: 'pdf',
-        download: '202',
-        createdAt: Date.now(),
-        rating: 4.5,
-
-
-    };
+ {
+   id: 'title',
+   title: 'mathmatics pyq',
+   calss: '12',
+   subject: 'mathematics',
+   faculty: 'science',
+   type: ' Board exam',
+   year: '',
+   fileUrl: '',
+   filetype: ' pdf',
+   download: '',
+   createdAt: 0,
+   rating: 4.5,
+ },
 
   ];
 
-  const filteredPYQs = pyqs.filter(pyq => {
+  const filteredPYQs = PYQs.filter(pyq => {
     const matchesFaculty = pyq.faculty === user?.faculty;
     const matchesSearch = pyq.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          pyq.subject.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesSubject = !filterSubject || pyq.subject === filterSubject;    //filtering ??? confusing xa
+    const matchesSubject = !filtersubject || pyq.subject === filtersubject;    //filtering ??? confusing xa
     const matchesYear = !filterYear || pyq.year === filterYear;
     const matchesType = !filterType || pyq.type === filterType;
     return matchesFaculty && matchesSearch && matchesSubject && matchesYear && matchesType;
   });
 
-  const subjects = [...new Set(pyqs.filter(p => p.faculty === user?.faculty).map(p => p.subject))];
-  const years = [...new Set(pyqs.map(p => p.year))].sort((a, b) => parseInt(b) - parseInt(a));
+  const subjects = [...new Set(PYQs.filter(p => p.faculty === user?.faculty).map(p => p.subject))];
+  const years = [...new Set(PYQs.map(p => p.year))].sort((a, b) => parseInt(b) - parseInt(a));
   const types = ['Board Exam', 'Model Question', 'Important Questions'];
 
   const formatTimeAgo = (dateString: string) => {
@@ -184,11 +154,26 @@ rating: number;
     ));
   };
   return(
-    <div className='
+    <div className="max-w-6xl mx-auto p-6">
+      {}
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">Past Year Questions & Important Questions</h1>
+        <p className="text-gray-600">Access previous year questions and important questions for {user?.faculty} faculty</p>
+      </div>
+      {}
+      <div className=''>
+
+
+      </div>
 
 
 
- 
+        </div>
 
+
+
+
+  )
+  };
 
   

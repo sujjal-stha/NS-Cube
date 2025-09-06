@@ -49,9 +49,43 @@ export default function FeedPage(){
         <p className="text-white/90">
           Stay updated with the latest discussions and resources in {user?.faculty}
         </p>
-        
+                <div className="flex items-center space-x-4 mt-4">
+                     <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></div>
+                            <span className="text-sm text-white/90">Class {user?.class}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-green-300 rounded-full animate-bounce"></div>
+                            <span className="text-sm text-white/90">{user?.faculty} Faculty</span>
+                            </div>
+                    </div>
                     </div>
                 </div>
+                {}
+                <div className="flex space-x-1 mb-6 bg-gradient-to-r from-purple-100 via-blue-100 to-green-100 p-1 rounded-2xl shadow-lg">
+                    <button
+          onClick={() => setActiveTab('hot')}
+          className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+            activeTab === 'hot'
+              ? 'bg-white text-purple-600 shadow-lg'
+              : 'text-gray-600 hover:text-purple-700 hover:bg-white/50'
+          }`}
+        >
+            <TrendingUp className="h-4 w-4" />
+          <span> Hot Questions</span>
+          </button>
+          <button
+          onClick={() => setActiveTab('questions')}
+          className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
+            activeTab === 'questions'
+              ? 'bg-white text-blue-600 shadow-lg'
+              : 'text-gray-600 hover:text-blue-700 hover:bg-white/50'
+          }`}
+        >
+            <MessageSquare className="h-4 w-4" />
+          <span> Recent Q&A</span>
+          </button>
+                    </div>
             </div>
 
   )
