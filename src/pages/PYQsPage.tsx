@@ -1,6 +1,6 @@
 import React { useState } from 'react';
-import { user} from ' lucide-react' ;
 import {useAuth } from '../contexts/AuthContext';  
+import { FileText, Download, Search, Clock, Eye, Star, user } from 'lucide-react';
 
 interface PYqs ={
   id: String;
@@ -35,7 +35,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '587',
         createdAt: Date.now(),
         rating: 4.5
 
@@ -48,7 +48,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '393',
         createdAt: Date.now(),
         rating: 4.5
 
@@ -63,7 +63,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '280',
         createdAt: Date.now(),
         rating: 4.5,
         
@@ -78,7 +78,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '250',
         createdAt: Date.now(),
         rating: 4.5,
     },
@@ -92,7 +92,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '159',
         createdAt: Date.now(),
         rating: 4.5,
     },
@@ -106,7 +106,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '390',
         createdAt: Date.now(),
         rating: 4.5,
     },
@@ -120,7 +120,7 @@ rating: number;
         year: '2023',
         fileUrl: 'https://example.com/physics-pyq-2023.pdf',
         filetype: 'pdf',
-        download: 'Download',
+        download: '202',
         createdAt: Date.now(),
         rating: 4.5,
 
