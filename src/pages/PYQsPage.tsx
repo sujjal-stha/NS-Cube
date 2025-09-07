@@ -1,10 +1,150 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { FileText, Download, Search, Clock, Eye, Star, User } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';  
 
 
 interface Pyq{
-  id: String;
+  id: string;
   title: string;
   class: string;
 subject: any;
@@ -14,7 +154,7 @@ type: ' Board exam' | ' important question' | 'Model question';
  fileUrl: string;
 filetype: 'pdf' | ' doc';
  download: number; 
-createdAt: number;
+createdAt: string;
 rating: number;
 };
   export default function PYQspage(){
@@ -33,10 +173,10 @@ rating: number;
       subject: 'Physics',
       faculty: 'science',
       year: '2023',
-      fileUrl: '',
+      fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
       filetype: 'pdf',
       download: 587,
-      createdAt: Date.now(),
+      createdAt: '2025-9-7',
       rating: 4.5,
       type: ' Board exam'
     },
@@ -50,7 +190,7 @@ rating: number;
      fileUrl: '',
      filetype: 'pdf',
      download: 393,
-     createdAt: Date.now(),
+     createdAt:'2025-8-7',
      rating: 4.5,
      type: ' Board exam'
    },
@@ -65,7 +205,7 @@ rating: number;
         fileUrl: '',
         filetype: 'pdf',
         download: 280,
-        createdAt: Date.now(),
+        createdAt:'2025-7-7',
         rating: 4.5,
         
     },
@@ -80,7 +220,7 @@ rating: number;
         fileUrl: '',
         filetype: 'pdf',
         download: 250,
-        createdAt: Date.now(),
+        createdAt: '2025-9-7',
         rating: 4.5,
     },
  {
@@ -94,7 +234,7 @@ rating: number;
    fileUrl: '',
    filetype:'pdf',
    download: 403,
-   createdAt: Date.now(),
+   createdAt: '2025-9-7',
    rating: 4.5,
  },
  {
@@ -108,7 +248,7 @@ rating: number;
   fileUrl: '',
   filetype: 'pdf',
   download: 400,
-  createdAt: Date.now(),
+  createdAt:'2025-9-7',
   rating: 4.5,
  },
  {
@@ -122,7 +262,7 @@ year: '2023',
 fileUrl: '',
 filetype: 'pdf',
 download: 700,
-createdAt: Date.now(),
+createdAt:'2025-9-7',
 rating: 4.5,
  },
 {
@@ -136,7 +276,7 @@ rating: 4.5,
   fileUrl: '',
   filetype: 'pdf',
   download: 300,
-  createdAt: Date.now(),
+  createdAt: '2025-9-7',
   rating: 5
 },
 
@@ -329,13 +469,42 @@ rating: 4.5,
                   <Eye className="h-3 w-3" />
                 </button>
               </div>
-              
             </div>
           ))
-        }
-      
-        
-        
+        ): (
+          <div className="col-span-full text-center py-12">
+            <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No PYQs found</h3>
+            <p className="text-gray-600">No past year questions available for the selected criteria.</p>
+          </div>
+        )}
+      </div>
+
+      {}
+      <div className="mt-12">
+        <h2 className="text-xl font-bold text-gray-900 mb-6">Most Downloaded This Month</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredPYQs
+            .sort((a, b) => b.download - a.download)
+            .slice(0, 3)
+            .map((pyq, index) => (
+              <div key={pyq.id} className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-200">
+                <div className="flex items-center space-x-3">
+                  <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                    #{index + 1}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-gray-900 text-sm">{pyq.title}</h4>
+                    <p className="text-xs text-gray-600">{pyq.download} downloads</p>
+                  </div>
+                </div>
+                 
+              </div> 
+            
+            ))}
+ 
+
+        </div>
 
         
 </div>

@@ -30,10 +30,10 @@ export default function ProfilePage(){
   if (!user) return null;
 
   return (
-
     <div className="max-w-4xl mx-auto p-6">
-        
+        {/* Profile Card*/}
         <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+           <div className ="flex items-start justify-between">
              <div className="flex items-center space-x-6">
                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                         <User className="h-10 w-10 text-white" />
@@ -118,9 +118,63 @@ export default function ProfilePage(){
                         </div>
                          <div className="p-6">
                          <div className="space-y-4">
-                        {userQuestions}
+                        {userQuestions.length > 0 ? (
+                          userQuestions.map((questions)=>(
+                                            <div key={questions.id} className="border border-gray-200 rounded-lg p-4">
+                                                <div className="flex items-center space-x-2 mb-2">
+                                                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFacultyColor(questions.faculty)}`}>{questions.subject}</span>
+                    <span className="text-xs text-gray-500">{formatDate(questions.createdAt)}</span>
+                                                  </div>
+                                                    <h3 className="font-medium text-gray-900 mb-2">{questions.title}</h3>
+                  <p className="text-gray-600 text-sm mb-3 line-clamp-2">{questions.content}</p>
+                  <div className="flex items-center space-x-4 text-sm text-gray-500">
+                                <div className="flex items-center space-x-1">
+                                   <Heart className="h-3 w-3" />
+                      <span>{questions.likes} likes</span>
+                                  </div>
+                                  <div className="flex items-center space-x-1">
+                                     <MessageSquare className="h-3 w-3" />
+                      <span>{questions.answers.length} answers</span>
+                                    </div>
+                                    <span>{questions.views} views</span>
+                    </div>
+                                              </div>
+                          ))
+                           ) : (
+                             <div className="text-center py-8 text-gray-500">
+                                  <MessageSquare className="h-12 w-12 mx-auto mb-4 text-gray-400" />
+                <p>You haven't asked any questions yet.</p>
+                              </div>
+                        )}
                             </div>
                             </div>
                 </div>
+                {}
+                 <div className="mt-6 bg-white rounded-lg border border-gray-200 p-6">
+                     <h2 className="text-lg font-semibold text-gray-900 mb-4">Achievements</h2>
+                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                          <div className="text-center p-4 bg-yellow-50 rounded-lg">
+                            <div className="text-3xl mb-2">🏆</div>
+            <div className="text-sm font-medium text-gray-900">Top Contributor</div>
+            <div className="text-xs text-gray-500">Earned 1000+ points</div>
+                            </div>
+                              <div className="text-center p-4 bg-blue-50 rounded-lg">
+                                <div className="text-3xl mb-2">📚</div>
+            <div className="text-sm font-medium text-gray-900">Knowledge Seeker</div>
+            <div className="text-xs text-gray-500">Asked 10+ questions</div>
+                                </div>
+                                 <div className="text-center p-4 bg-green-50 rounded-lg">
+                                <div className="text-3xl mb-2">✍️</div>
+                                 <div className="text-sm font-medium text-gray-900">Note Sharer</div>
+            <div className="text-xs text-gray-500">Uploaded 5+ notes</div>
+                                  </div>
+                                    <div className="text-center p-4 bg-red-50 rounded-lg">
+                                    <div className="text-3xl mb-2">❤️</div>
+            <div className="text-sm font-medium text-gray-900">Community Helper</div>
+            <div className="text-xs text-gray-500">Received 50+ likes</div>
+                                      </div>
+                      </div>
+                  </div>
+                  </div>
   );
-}
+}   

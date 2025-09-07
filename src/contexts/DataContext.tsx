@@ -81,8 +81,43 @@ interface DataContextType {
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
 export function DataProvider({ children }: { children: ReactNode }) {
-    const { user } = useAuth();
+  const { user } = useAuth();
+  const dndContext = useContext(React.createContext<any>(undefined));
+  const [questions, setQuestions] = useState<Question[]>([]);
+  const [notes, setNotes] = useState<Note[]>([]);
+  const [news, setNews] = useState<NewsArticle[]>([]);
 
+  useEffect(() => {
+    // Load initial data
+    loadInitialData();
+  }, []);
+
+
+  const loadInitialData = () => {
+     const sampleQuestions: Question[] = [
+        {
+        id: '1',
+        title: 'What is the derivative of x²?',
+        content: 'I need help understanding how to find the derivative of x squared. Can someone explain the process step by step?',
+        author: { name: 'Priya Sharma', faculty: 'Science' },
+        faculty: 'Science',
+        subject: 'Mathematics',
+        likes: 15,
+        views: 123,
+        answers: [
+          {
+            id: '1',
+            content: 'The derivative of x² is 2x. Using the power rule: d/dx(x^n) = n*x^(n-1), so d/dx(x²) = 2*x^(2-1) = 2x',
+            author: { name: 'Raj Kumar', faculty: 'Science' },
+            likes: 8,
+            createdAt: '2024-01-20T10:30:00Z'
+          }
+        ],
+        createdAt: '2025-01-20T09:15:00Z'
+      },
+      
+     ]
+  }
 }
 
 
