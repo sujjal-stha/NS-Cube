@@ -85,6 +85,28 @@ export default function LandingPage() {
 								</span>
           </div>
           </div>
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-responsive">
+							Your Gateway to
+							<span className="bg-gradient-to-r from-purple-600 via-blue-600 to-green-600 bg-clip-text text-transparent block animate-pulse">
+								Academic Success
+							</span>
+						</h1>
+            <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed px-4 text-responsive">
+							Join Nepal's premier educational platform designed specifically for
+							NEB students. Connect, learn, and excel with your peers in Class 11
+							& 12. ✨
+						</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+              <Link
+								to="/register"
+								className="bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 hover:from-purple-600 hover:via-blue-600 hover:to-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2 text-sm sm:text-base"
+							>
+								<span className="text-xl"></span>
+								<span>Get Started Free</span>
+								<ArrowRight className="h-5 w-5" />
+							</Link>
+              
+            </div>
         </div>
         </div>
         </section>

@@ -5,7 +5,7 @@ import { useData } from '../contexts/DataContext';
 
 export default function NotesPage(){
     const { user } = useAuth();
-    const { notes, likeNotes, saveNotes } = useData();
+    const { notes, likeNote, saveNote } = useData();
 
     const [, setShowUploadModal] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
@@ -99,29 +99,29 @@ export default function NotesPage(){
                   <div className="flex items-center space-x-2">
                     <div>
                     <span>
-                       {note?.subject ?? 'General'}
+                       {notes?.subject ?? 'General'}
                       </span>
                        <span className="ml-2 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
-                      Class {note?.['class'] ?? '—'}
+                      Class {notes?.['class'] ?? '—'}
                     </span>
                       </div>
                     </div>
                     <button
-                  onClick={() => note?.id && saveNote(note.id)}
+                  onClick={() => notes?.id && saveNote(notes.id)}
                   className={`p-1 rounded transition-colors ${
-                    note?.saved ? 'text-blue-600' : 'text-gray-400 hover:text-blue-600'
+                    notes?.saved ? 'text-blue-600' : 'text-gray-400 hover:text-blue-600'
                   }`}
                 >
-                  <Save className={`h-4 w-4 ${note?.saved ? 'fill-current' : ''}`} />
+                  <Save className={`h-4 w-4 ${notes?.saved ? 'fill-current' : ''}`} />
                 </button>
                 </div>
-                 <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{note?.title ?? 'Untitled'}</h3>
-              <p className="text-gray-600 text-sm mb-4 line-clamp-3">{note?.description ?? 'No description.'}</p>
+                 <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{notes?.title ?? 'Untitled'}</h3>
+              <p className="text-gray-600 text-sm mb-4 line-clamp-3">{notes?.description ?? 'No description.'}</p>
 
                <div className="flex items-center space-x-2 mb-4 text-xs text-gray-500">
                      <div className="flex items-center space-x-1">
                         <User className="h-3 w-3" />
-                  <span>{note?.author?.name ?? 'Unknown'}</span>
+                  <span>{notes?.author?.name ?? 'Unknown'}</span>
                       </div>
                       <div className="flex items-center space-x-1">
                        <Clock className="h-3 w-3" />
@@ -130,17 +130,17 @@ export default function NotesPage(){
                  <div className="flex items-center justify-between">
                      <div className="flex items-center space-x-4">
                       <button
-                    onClick={() => note?.id && likeNote(note.id)}
+                    onClick={() => notes?.id && likeNote(notes.id)}
                     className={`flex items-center space-x-1 transition-colors ${
-                      note?.liked ? 'text-red-500' : 'text-gray-500 hover:text-red-500'
+                      notes?.liked ? 'text-red-500' : 'text-gray-500 hover:text-red-500'
                     }`}
                   >
-                    <Heart className={`h-4 w-4 ${note?.liked ? 'fill-current' : ''}`} />
-                    <span className="text-sm">{note?.likes ?? 0}</span>
+                    <Heart className={`h-4 w-4 ${notes?.liked ? 'fill-current' : ''}`} />
+                    <span className="text-sm">{notes?.likes ?? 0}</span>
                   </button>
                    <div className="flex items-center space-x-1 text-gray-500">
                        <Download className="h-4 w-4" />
-                    <span className="text-sm">{note?.downloads ?? 0}</span>
+                    <span className="text-sm">{notes?.downloads ?? 0}</span>
                     </div>
                       </div>
                       <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"onClick={()=>window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "_blank")}>

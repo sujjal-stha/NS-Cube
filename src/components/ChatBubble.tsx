@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react ';
+import React, { useState, useEffect, useRef } from 'react';
 type Message = { role : 'user' | 'bot'; text: string };
 
 export default function ChatBubble() {
@@ -8,7 +8,7 @@ export default function ChatBubble() {
     const [loading, setLoading] = useState(false);
     const messagesRef = useRef<HTMLDivElement | null>(null);
  
-    const GEMINI_API-KEY = (import.meta.env.VITE_GEMINI_API_KEY) || '<PUT_YOUR_API_KEY_HERE>';
+    const GEMINI_API_KEY = (import.meta.env.VITE_GEMINI_API_KEY) || '<PUT_YOUR_API_KEY_HERE>';
     const MODEL_NAME = "gemini-2.0-flash";
     const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`;
 
@@ -60,6 +60,7 @@ export default function ChatBubble() {
       setMessages(m => [...m, { role: "bot", text: `⚠️ API error: ${errMessage}` }]);
       return;
     }
+    const candidateText =
       data?.candidates?.[0]?.content?.parts?.[0]?.text ||     
       data?.output?.[0]?.content?.text ||                   
       data?.candidates?.[0]?.output?.[0]?.content?.text ||   

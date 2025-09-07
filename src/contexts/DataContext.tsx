@@ -57,7 +57,7 @@ export interface NewsArticle {
     title: string;
     content: string;
     excerpt: string;
-    imageurl: string;
+    imageUrl: string;
     author: string;
     publishedAt: string;
     category: 'NEB updates' | 'Scholarships' | 'Entrance Exams' | 'General' | 'Events'| 'Other';
@@ -1294,7 +1294,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE CEE 2025 Application Opens - Registration Starts January 15',
     content: 'The Institute of Engineering (IOE) has announced that the Common Entrance Examination (CEE) 2025 applications will open from January 15, 2025. Students who have completed their +2 or equivalent can apply for undergraduate engineering programs. The examination is scheduled for April 2025.',
     excerpt: 'IOE CEE 2025 registration begins January 15 for engineering aspirants.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'IOE Administration',
     publishedAt: '2025-01-10T09:00:00Z',
     category: 'Entrance Exams'
@@ -1304,7 +1304,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'NEB Grade 12 Results 2024 Published - Check Your Results Online',
     content: 'The National Examinations Board (NEB) has published the Grade 12 examination results for 2024. Students can check their results online using their symbol number and date of birth on the official NEB website. The overall pass percentage this year is 68.34%.',
     excerpt: 'NEB Grade 12 results 2024 announced with 68.34% pass rate.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'NEB Official',
     publishedAt: '2024-12-20T10:30:00Z',
     category: 'NEB updates'
@@ -1314,7 +1314,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Prime Minister Scholarship 2025 - Applications Open for Undergraduate Studies',
     content: 'The Government of Nepal has announced the Prime Minister Employment Program Scholarship for 2025. Eligible students from marginalized communities can apply for full scholarships covering tuition fees, accommodation, and stipends for undergraduate programs in engineering, medicine, and other fields.',
     excerpt: 'PM Scholarship 2025 applications open for marginalized communities.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'Scholarship Department',
     publishedAt: '2025-01-05T08:00:00Z',
     category: 'Scholarships'
@@ -1324,7 +1324,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE Entrance Exam Pattern Changed - New Syllabus for CEE 2025',
     content: 'The Institute of Engineering has updated the entrance examination pattern for CEE 2025. The new format includes 120 multiple-choice questions covering Physics (40), Chemistry (30), Mathematics (40), and English (10). The examination duration remains 3 hours.',
     excerpt: 'IOE CEE 2025 introduces new exam pattern with updated syllabus.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'IOE Examination Board',
     publishedAt: '2024-12-15T14:00:00Z',
     category: 'Entrance Exams'
@@ -1334,7 +1334,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Medical College Admission Test (MCAT) 2025 Schedule Released',
     content: 'The Medical Education Commission has released the schedule for MCAT 2025. The entrance examination for MBBS and BDS programs will be held on March 30, 2025. Online registration starts from February 1 and closes on February 28, 2025.',
     excerpt: 'MCAT 2025 scheduled for March 30, registration begins February 1.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'Medical Education Commission',
     publishedAt: '2025-01-08T11:15:00Z',
     category: 'Entrance Exams'
@@ -1344,7 +1344,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Digital Nepal Education Summit 2025 - Transforming Learning',
     content: 'The Ministry of Education is organizing the Digital Nepal Education Summit 2025 in Kathmandu from February 15-17. The summit will focus on integrating technology in education, online learning platforms, and preparing students for the digital age.',
     excerpt: 'Digital Education Summit 2025 to be held in Kathmandu this February.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'Ministry of Education',
     publishedAt: '2025-01-12T16:30:00Z',
     category: 'Events'
@@ -1354,7 +1354,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'NEB Announces Class 11 Admission Guidelines for 2025',
     content: 'The National Examinations Board has published new admission guidelines for Class 11 enrollment in 2025. Students must secure a minimum GPA of 2.0 in SEE to be eligible for Science stream, while Management and Humanities require a GPA of 1.6.',
     excerpt: 'New Class 11 admission guidelines released by NEB for 2025.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'NEB Administration',
     publishedAt: '2024-12-28T13:20:00Z',
     category: 'NEB updates'
@@ -1364,7 +1364,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Study Abroad Fair 2025 - Opportunities in Australia and Canada',
     content: 'The International Education Consultancy Association is organizing a Study Abroad Fair from January 20-22, 2025, at Bhrikutimandap. Representatives from Australian and Canadian universities will provide information about undergraduate and graduate programs.',
     excerpt: 'Study Abroad Fair 2025 showcases opportunities in Australia and Canada.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'Education Consultancy Association',
     publishedAt: '2025-01-06T15:45:00Z',
     category: 'Other'
@@ -1374,7 +1374,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Tips for Effective Exam Preparation - Expert Advice for Students',
     content: 'Education experts share valuable tips for effective exam preparation including time management, study techniques, stress management, and maintaining a healthy lifestyle during exam periods. These strategies can help students achieve better results.',
     excerpt: 'Expert tips for effective exam preparation and stress management.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'Education Expert Panel',
     publishedAt: '2024-12-25T12:00:00Z',
     category: 'General'
@@ -1384,7 +1384,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE Introduces New Engineering Programs - AI and Data Science',
     content: 'The Institute of Engineering has announced two new undergraduate programs starting from 2025: Bachelor in Artificial Intelligence and Bachelor in Data Science. These programs aim to meet the growing demand for tech professionals in Nepal and internationally.',
     excerpt: 'IOE launches new AI and Data Science programs for 2025 intake.',
-    imageurl: '#',
+    imageUrl: '#',
     author: 'IOE Academic Council',
     publishedAt: '2025-01-03T10:00:00Z',
     category: 'NEB updates'

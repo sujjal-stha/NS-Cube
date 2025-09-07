@@ -224,6 +224,21 @@ rating: 5,
   rating: 4,
 },
 
+{
+  id: '14',
+  title: '',
+  class: '12',
+  subject: 'Math',
+  faculty: 'science',
+  type: ' important question',
+  year: '2024',
+  fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
+  filetype: 'pdf',
+  download: 34,
+  createdAt: '2025-09-07',
+  rating: 4,
+},
+
   ];
 
   const filteredPYQs = PYQs.filter(pyq => {
