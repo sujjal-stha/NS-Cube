@@ -31,13 +31,6 @@ const [showPassword, setShowPassword] = useState(false);
     setError(null);
     setFormData(prev => ({ ...prev, [field]: value }));
   };
-const handleSubmit = async (e: React.FormEvent) => {   
-  e.preventDefault();
-  if (!fromData.name || !fromData.email  || !fromData.password ||  !fromData.confirmpassword || !fromData.class || !fromData.faculty) {
-    setError('Please fill in all fields.');
-    return;
-  } 
 
-  }
-
+  
 }

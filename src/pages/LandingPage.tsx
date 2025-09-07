@@ -77,7 +77,14 @@ export default function LandingPage() {
        <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center">
-        
+        <div className="mb-8">
+        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-blue-100 px-4 py-2 rounded-full mb-4">
+          <span className="text-2xl">🎓</span>
+								<span className="text-purple-700 font-medium">
+									Nepal's #1 Educational Platform
+								</span>
+          </div>
+          </div>
         </div>
         </div>
         </section>

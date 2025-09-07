@@ -1518,12 +1518,3 @@ export function DataProvider({ children }: { children: ReactNode }) {
   }
   return context;
 }
-
-
-
-
-
-
-
-
-
