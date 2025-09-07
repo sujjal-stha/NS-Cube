@@ -50,6 +50,7 @@ export interface Notes {
     createdAt: string;
     liked?: boolean;
     saved?: boolean;
+    rating: number;
 }
 
 export interface NewsArticle {
@@ -705,7 +706,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 230,
     likes: 345,
-    createdAt: '2025-01-15T13:45:00Z'
+    createdAt: '2025-01-15T13:45:00Z',
+    rating: 3.5
   },
   {
     id: '2',
@@ -722,7 +724,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 189,
     likes: 267,
-    createdAt: '2025-02-10T09:30:00Z'
+    createdAt: '2025-02-10T09:30:00Z',
+    rating: 4.5
   },
   {
     id: '3',
@@ -739,7 +742,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 198,
-    createdAt: '2025-03-05T14:20:00Z'
+    createdAt: '2025-03-05T14:20:00Z',
+    rating: 1.5
   },
   {
     id: '4',
@@ -756,7 +760,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 203,
     likes: 289,
-    createdAt: '2025-04-12T11:15:00Z'
+    createdAt: '2025-04-12T11:15:00Z',
+    rating: 5
   },
   {
     id: '5',
@@ -773,7 +778,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 278,
     likes: 367,
-    createdAt: '2025-05-18T16:40:00Z'
+    createdAt: '2025-05-18T16:40:00Z',
+    rating: 3.3
   },
   {
     id: '6',
@@ -790,7 +796,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 212,
-    createdAt: '2025-06-22T10:25:00Z'
+    createdAt: '2025-06-22T10:25:00Z',
+    rating: 4.5
   },
   {
     id: '7',
@@ -807,7 +814,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 167,
     likes: 234,
-    createdAt: '2025-07-08T13:50:00Z'
+    createdAt: '2025-07-08T13:50:00Z',
+    rating: 4
   },
   {
     id: '8',
@@ -824,7 +832,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 187,
-    createdAt: '2025-08-14T15:35:00Z'
+    createdAt: '2025-08-14T15:35:00Z',
+    rating: 3
   },
   {
     id: '9',
@@ -841,7 +850,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 198,
     likes: 256,
-    createdAt: '2025-09-20T12:10:00Z'
+    createdAt: '2025-09-20T12:10:00Z',
+    rating: 2.5
   },
   {
     id: '10',
@@ -858,7 +868,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 245,
     likes: 312,
-    createdAt: '2025-10-15T17:20:00Z'
+    createdAt: '2025-10-15T17:20:00Z',
+    rating: 1.9
   },
 
   {
@@ -876,7 +887,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 278,
     likes: 345,
-    createdAt: '2025-01-25T11:30:00Z'
+    createdAt: '2025-01-25T11:30:00Z',
+    rating: 5
   },
   {
     id: '12',
@@ -893,7 +905,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 234,
     likes: 298,
-    createdAt: '2025-02-18T14:45:00Z'
+    createdAt: '2025-02-18T14:45:00Z',
+    rating: 3.4
   },
   {
     id: '13',
@@ -910,7 +923,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 189,
     likes: 267,
-    createdAt: '2025-03-22T16:15:00Z'
+    createdAt: '2025-03-22T16:15:00Z',
+    rating: 5
   },
   {
     id: '14',
@@ -927,7 +941,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 234,
-    createdAt: '2025-04-28T09:40:00Z'
+    createdAt: '2025-04-28T09:40:00Z',
+    rating: 3
   },
   {
     id: '15',
@@ -944,7 +959,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 203,
     likes: 278,
-    createdAt: '2025-05-30T13:25:00Z'
+    createdAt: '2025-05-30T13:25:00Z',
+    rating: 2
   },
   {
     id: '16',
@@ -961,7 +977,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 167,
     likes: 198,
-    createdAt: '2025-06-25T15:50:00Z'
+    createdAt: '2025-06-25T15:50:00Z',
+    rating: 1
   },
   {
     id: '17',
@@ -978,7 +995,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 212,
-    createdAt: '2025-07-20T12:35:00Z'
+    createdAt: '2025-07-20T12:35:00Z',
+    rating: 4.6
   },
   {
     id: '18',
@@ -995,7 +1013,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 245,
-    createdAt: '2025-09-16T10:20:00Z'
+    createdAt: '2025-09-16T10:20:00Z',
+    rating: 3.5
   },
   {
     id: '19',
@@ -1012,7 +1031,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 234,
     likes: 289,
-    createdAt: '2025-09-12T17:45:00Z'
+    createdAt: '2025-09-12T17:45:00Z',
+    rating: 3.7
   },
   {
     id: '20',
@@ -1029,7 +1049,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 198,
     likes: 267,
-    createdAt: '2025-09-08T14:30:00Z'
+    createdAt: '2025-09-08T14:30:00Z',
+    rating: 1.5
   },
   {
     id: '21',
@@ -1046,7 +1067,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 234,
-    createdAt: '2025-09-15T11:20:00Z'
+    createdAt: '2025-09-15T11:20:00Z',
+    rating: 0
   },
   {
     id: '22',
@@ -1063,7 +1085,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 198,
-    createdAt: '2025-09-20T14:35:00Z'
+    createdAt: '2025-09-20T14:35:00Z',
+    rating: 4.6
   },
   {
     id: '23',
@@ -1080,7 +1103,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 167,
-    createdAt: '2025-09-10T16:45:00Z'
+    createdAt: '2025-09-10T16:45:00Z',
+    rating: 2
   },
   {
     id: '24',
@@ -1097,7 +1121,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 189,
-    createdAt: '2025-09-25T13:10:00Z'
+    createdAt: '2025-09-25T13:10:00Z',
+    rating: 4.0
   },
   {
     id: '25',
@@ -1114,7 +1139,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 167,
     likes: 212,
-    createdAt: '2025-09-30T15:25:00Z'
+    createdAt: '2025-09-30T15:25:00Z',
+    rating: 3.7
   },
   {
     id: '26',
@@ -1131,7 +1157,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 189,
     likes: 245,
-    createdAt: '2025-09-18T12:40:00Z'
+    createdAt: '2025-09-18T12:40:00Z',
+    rating: 4.5
   },
   {
     id: '27',
@@ -1148,7 +1175,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 198,
-    createdAt: '2025-09-12T14:55:00Z'
+    createdAt: '2025-09-12T14:55:00Z',
+    rating: 5
   },
   {
     id: '28',
@@ -1165,7 +1193,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 167,
-    createdAt: '2025-09-28T16:20:00Z'
+    createdAt: '2025-09-28T16:20:00Z',
+    rating: 1.6
   },
   {
     id: '29',
@@ -1182,7 +1211,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 223,
-    createdAt: '2025-09-20T11:30:00Z'
+    createdAt: '2025-09-20T11:30:00Z',
+    rating: 4
   },
   {
     id: '30',
@@ -1199,7 +1229,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 189,
-    createdAt: '2025-09-15T13:45:00Z'
+    createdAt: '2025-09-15T13:45:00Z',
+    rating: 3
   },
   {
     id: '31',
@@ -1216,7 +1247,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 167,
     likes: 234,
-    createdAt: '2025-09-28T10:15:00Z'
+    createdAt: '2025-09-28T10:15:00Z',
+    rating: 0
   },
   {
     id: '32',
@@ -1233,7 +1265,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 198,
-    createdAt: '2025-09-22T15:30:00Z'
+    createdAt: '2025-09-22T15:30:00Z',
+    rating: 5
   },
   {
     id: '33',
@@ -1250,7 +1283,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 176,
-    createdAt: '2025-09-18T12:20:00Z'
+    createdAt: '2025-09-18T12:20:00Z',
+    rating: 3
   },
   {
     id: '34',
@@ -1267,7 +1301,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 123,
     likes: 156,
-    createdAt: '2025-09-10T14:40:00Z'
+    createdAt: '2025-09-10T14:40:00Z',
+    rating: 4
   },
   {
     id: '35',
@@ -1284,7 +1319,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 201,
-    createdAt: '2025-09-25T16:55:00Z'
+    createdAt: '2025-09-25T16:55:00Z',
+    rating: 3
   }
 ];
     const sampleNews: NewsArticle[] = [

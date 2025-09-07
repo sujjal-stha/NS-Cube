@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Upload, Download, Heart, Search, Clock, User, Save } from 'lucide-react';
+import { BookOpen, Upload, Download, Heart, Search, Clock, User, Save ,Star} from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useData } from '../contexts/DataContext';
 
@@ -37,6 +37,16 @@ export default function NotesPage(){
         .filter(Boolean)
     ),
   ];
+   const renderStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <Star
+        key={i}
+        className={`h-3 w-3 ${
+          i < Math.floor(rating) ? 'text-yellow-400 fill-current' : 'text-gray-300'
+        }`}
+      />
+    ));
+  };
   return (
      <div className="max-w-6xl mx-auto p-6">
         {}
@@ -117,6 +127,10 @@ export default function NotesPage(){
                 </div>
                  <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{notes?.title ?? 'Untitled'}</h3>
               <p className="text-gray-600 text-sm mb-4 line-clamp-3">{notes?.description ?? 'No description.'}</p>
+               <div className="flex items-center space-x-1">
+                  {renderStars(notes.rating)}
+                  <span className="text-xs">({notes.rating})</span>
+                </div>
 
                <div className="flex items-center space-x-2 mb-4 text-xs text-gray-500">
                      <div className="flex items-center space-x-1">
@@ -124,7 +138,6 @@ export default function NotesPage(){
                   <span>{notes?.author?.name ?? 'Unknown'}</span>
                       </div>
                       <div className="flex items-center space-x-1">
-                       <Clock className="h-3 w-3" />
                       </div>
                 </div>
                  <div className="flex items-center justify-between">
