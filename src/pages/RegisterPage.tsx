@@ -7,6 +7,14 @@ const class = [ '11', '12'] as const;
 
    
 export default function RegisterPage(){
-    const 
+      const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    class: '' as '11' | '12' | '',
+    faculty: '' as typeof faculties[number] | ''
+  });
+
 
 }
