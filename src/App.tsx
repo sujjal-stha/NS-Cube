@@ -46,7 +46,8 @@ function AppRoutes() {
   </Routes>
   );
 }
-function App() {  return (
+function App() { 
+   return (
     <AuthProvider>
       <DataProvider>
         <Router>
@@ -56,4 +57,6 @@ function App() {  return (
         </Router>
       </DataProvider>
     </AuthProvider>
-  );}export default App;                                                                                                                                                                                                                                                                                                                                                                                     +
+  );
+}
+export default App;                                                                                                                                                                                                                                                                                                                                                                                     +

@@ -11,7 +11,6 @@ export default function QuestionsPage() {
   const [filterSubject, setFilterSubject] = useState('');
   const [visibleAnswers, setVisibleAnswers] = useState<{ [key: string]: boolean }>({});
 
-  // Filter questions by user's faculty and search/filter criteria
   const filteredQuestions = questions.filter(q => {
     const matchesFaculty = q.faculty === user?.faculty;
     const matchesSearch = q.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -20,7 +19,6 @@ export default function QuestionsPage() {
     return matchesFaculty && matchesSearch && matchesSubject;
   });
 
-  // Get unique subjects for filter
   const subjects = [...new Set(questions.filter(q => q.faculty === user?.faculty).map(q => q.subject))];
 
   const formatTimeAgo = (dateString: string) => {
