@@ -9,7 +9,7 @@ interface Pyq{
   class: string;
 subject: any;
   faculty: any;   
-type: ' Board exam' | ' important question' | 'Model question';
+type: 'Board Exam' | 'Important Questions' | 'Model Question';
  year :string;
  fileUrl: string;
 filetype: 'pdf' | ' doc';
@@ -31,36 +31,36 @@ rating: number;
       title: 'Physics PYQ 2023',
       class: '12',
       subject: 'Physics',
-      faculty: 'science',
+      faculty: 'Science',
       year: '2023',
       fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
       filetype: 'pdf',
       download: 587,
       createdAt: '2025-9-7',
       rating: 4.5,
-      type: ' Board exam'
+      type: 'Board Exam'
     },
    {
      id: '2',
      title: 'Chemistry PYQ 2022',
      class: '12',
      subject: 'Chemistry',
-     faculty: 'science',
+     faculty: 'Science',
      year: '2023',
      fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
      filetype: 'pdf',
      download: 393,
      createdAt:'2025-8-7',
      rating: 4.5,
-     type: ' Board exam'
+     type: 'Board Exam'
    },
     {
         id: '3',
         title: 'Mathematics PYQ 2021',
         class: '12',
         subject: 'Mathematics',
-        faculty: 'science',                        ///download garna skane file
-        type: ' Board exam',
+        faculty: 'Science',                        ///download garna skane file
+        type: 'Board Exam',
         year: '2023',
         fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
         filetype: 'pdf',
@@ -74,8 +74,8 @@ rating: number;
         title: 'Biology PYQ 2020',
         class: ' 12',
         subject: 'Biology',
-        faculty: 'science',
-        type: ' Board exam',
+        faculty: 'Science',
+        type: 'Board Exam',
         year: '2023',
         fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
         filetype: 'pdf',
@@ -87,9 +87,9 @@ rating: number;
    id: '5',
    title: 'mathematics pyq',
    class: '12',
-   subject: 'mathematics',
-   faculty: 'science',
-   type: ' Board exam',
+   subject: 'Mathematics',
+   faculty: 'Science',
+   type: 'Model Question',
    year: '2024',
    fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
    filetype:'pdf',
@@ -103,7 +103,7 @@ rating: number;
   class: '12',
   subject: 'Economics', 
   faculty: 'Management',
-  type: ' Board exam',
+  type: 'Board Exam',
   year: '2024',
   fileUrl: ' https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -116,8 +116,8 @@ id: '7',
 title: 'Account',
 class: '12',
 subject: 'Account',
-faculty: 'science',
-type: ' important question', 
+faculty: 'Science',
+type: 'Important Questions', 
 year: '2023',
 fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
 filetype: 'pdf',
@@ -127,11 +127,11 @@ rating: 4.5,
  },
 {
   id: '8',
-  title: 'social pyq',
+  title: 'Social pyq',
   class: '11',
-  subject: 'social',
-  faculty: 'al1',
-  type: ' important question',
+  subject: 'Social',
+  faculty: 'Management',
+  type: 'Important Questions',
   year: '2022',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -145,7 +145,7 @@ rating: 4.5,
   class: '11',
   subject: 'Business studies',
   faculty: 'Management',
-  type: ' important question',
+  type: 'Important Questions',
   year: '2022',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -159,7 +159,7 @@ rating: 4.5,
   class: '12',
   subject: 'Buisness Math',
   faculty: 'Management',
-  type: ' important question',
+  type: 'Important Questions',
   year: '2024',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -169,11 +169,11 @@ rating: 4.5,
 },
 {
   id: '11',
-  title: 'Education pyq',
+  title: 'Education ',
   class: '12',
   subject: 'Math',
-  faculty: 'science',
-  type: ' important question',
+  faculty: 'Science',
+  type: 'Important Questions',
   year: '2022',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -187,7 +187,7 @@ id: '12',
   class: '12',
   subject: 'Law',
   faculty: 'Law',
-  type: ' important question',
+  type: 'Important Questions',
   year: '2023',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -200,8 +200,8 @@ id: '13',
 title:'History pyq',
 class: '12',
 subject: 'History',
-faculty: 'humani',
-type: ' important question',
+faculty: 'Humanities',
+type: 'Important Questions',
 year: '2022',
 fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link', 
 filetype: 'pdf',
@@ -214,8 +214,8 @@ rating: 5,
   title: 'Maths',
   class: '12',
   subject: 'Math',
-  faculty: 'science',
-  type: ' important question',
+  faculty: 'Science',
+  type: 'Important Questions',
   year: '2024',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -229,8 +229,8 @@ rating: 5,
   title: '',
   class: '12',
   subject: 'Math',
-  faculty: 'science',
-  type: ' important question',
+  faculty: 'Science',
+  type: 'Important Questions',
   year: '2024',
   fileUrl: 'https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link',
   filetype: 'pdf',
@@ -245,7 +245,7 @@ rating: 5,
     const matchesFaculty = pyq.faculty === user?.faculty;
     const matchesSearch = pyq.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     pyq.subject.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesSubject = !filtersubject || pyq.subject === filtersubject;    //filtering ??? confusing xa
+    const matchesSubject = !filtersubject || pyq.subject === filtersubject;    //filtering 
     const matchesYear = !filterYear || pyq.year === filterYear;
     const matchesType = !filterType || pyq.type === filterType;
     return matchesFaculty && matchesSearch && matchesSubject && matchesYear && matchesType;
@@ -300,7 +300,7 @@ rating: 5,
       {}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Past Year Questions & Important Questions</h1>
-        <p className="text-gray-600">Access previous year questions and important questions for {user?.faculty} faculty</p>
+        <p className="text-gray-600">Access previous year questions and Important Questions for {user?.faculty} faculty</p>
       </div>
       {}
 <div className="flex flex-col lg:flex-row gap-4 mb-6">
@@ -308,7 +308,7 @@ rating: 5,
           <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
           <input
             type="text"
-            placeholder="Search PYQs and important questions..."
+            placeholder="Search PYQs and Important Questions..."
   value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -398,16 +398,9 @@ rating: 5,
                   <span className="text-xs">({pyq.rating})</span>
                 </div>
               </div>
-               <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{pyq.title}</h3>
+          
 
-              <div className="flex items-center space-x-4 mb-4 text-sm text-gray-600">
-                <span className="font-medium">Year: {pyq.year}</span>
-                <div className="flex items-center space-x-1">
-                  {renderStars(pyq.rating)}
-                  <span className="text-xs">({pyq.rating})</span>
-                </div>
-              </div>
-
+              
               <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                 <div className="flex items-center space-x-1">
                   <Download className="h-3 w-3" />
@@ -422,7 +415,7 @@ rating: 5,
               <div className="flex space-x-2">
                 <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-sm font-medium transition-colors flex items-center justify-center space-x-1">
                   <Download className="h-3 w-3" />
-                  <button onClick={()=>window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "_blank")}>Download</button>
+                  <button onClick={()=>window.open("https://drive.google.com/file/d/1IEPh9b-pEkkrXClceD-Tqvptf5G8uyce/view?usp=drive_link", "_blank")}>Download</button>
                 </button>
                 <button className="px-3 py-2 border border-gray-300 rounded text-sm font-medium hover:bg-gray-50 transition-colors">
                   <Eye className="h-3 w-3" />

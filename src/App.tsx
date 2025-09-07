@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { DataProvider } from './contexts/DataContext';
+import Layout from './components/Layout';
+
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -10,44 +14,42 @@ import NotesPage from './pages/NotesPage';
 import PYQsPage from './pages/PYQsPage';
 import NewsPage from './pages/NewsPage';
 import ProfilePage from './pages/ProfilePage';
-import Layout from './components/Layout';
-
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import { DataProvider } from './contexts/DataContext';
 
 function AppRoutes() {
   const { user,loading } = useAuth();
-  if(loading){
+
+  if (loading){
     return (
       <div className="flex items-center justify-center min-h-screen">
         <p className="text-gray-600">Loading...</p>
       </div>
     );
   }
+
   return (
-  <Routes>
-      {}
+    <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={!user ? <LoginPage /> : <Navigate to="/feed" replace />} />
       <Route path="/register" element={!user ? <RegisterPage /> : <Navigate to="/feed" replace />} />
-      {}
+
       {user ? (
         <Route path="/" element={<Layout />}>
-          <Route path="/feed" element={<FeedPage />} />
-          <Route path="/questions" element={<QuestionsPage />} />
-          <Route path="/notes" element={<NotesPage />} />
-          <Route path="/pyqs" element={<PYQsPage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="feed" element={<FeedPage />} />
+          <Route path="questions" element={<QuestionsPage />} />
+          <Route path="notes" element={<NotesPage />} />
+          <Route path="pyqs" element={<PYQsPage />} />
+          <Route path="news" element={<NewsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       ) : (
         <Route path="*" element={<Navigate to="/" replace />} />
       )}
-  </Routes>
+    </Routes>
   );
 }
-function App() { 
-   return (
+
+function App() {
+  return (
     <AuthProvider>
       <DataProvider>
         <Router>
@@ -59,4 +61,5 @@ function App() {
     </AuthProvider>
   );
 }
-export default App;                                                                                                                                                                                                                                                                                                                                                                                     +
+
+export default App;

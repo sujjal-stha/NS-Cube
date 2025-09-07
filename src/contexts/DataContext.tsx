@@ -87,13 +87,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [news, setNews] = useState<NewsArticle[]>([]);
 
   useEffect(() => {
-    loadInitialData(); // Load initial data
+    loadInitialData(); 
   }, []);
 
 
   const loadInitialData = () => {
      const sampleQuestions: Question[] = [
-  // Science Faculty (10 questions - mixed subjects)
+
   {
     id: '1',
     title: 'What is the derivative of x²?',
@@ -109,10 +109,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'The derivative of x² is 2x. Using the power rule: d/dx(x^n) = n*x^(n-1), so d/dx(x²) = 2*x^(2-1) = 2x',
         author: { name: 'Raj Kumar', faculty: 'Science' },
         likes: 8,
-        createdAt: '2025-01-20T10:30:00Z'
+        createdAt: '2025-09-15T10:30:00Z'
       }
     ],
-    createdAt: '2025-01-20T09:15:00Z'
+    createdAt: '2025-09-20T09:15:00Z'
   },
   {
     id: '2',
@@ -129,14 +129,14 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'Mitochondria are the powerhouse of the cell. They produce ATP through cellular respiration by breaking down glucose in the presence of oxygen.',
         author: { name: 'Dr. Ramesh Koju', faculty: 'Science' },
         likes: 12,
-        createdAt: '2025-03-12T14:20:00Z'
+        createdAt: '2025-09-15T10:30:00Z'
       },
       {
         id: '3',
         content: 'The process occurs in three stages: glycolysis, Krebs cycle, and electron transport chain.',
         author: { name: 'Maya Gurung', faculty: 'Science' },
         likes: 8,
-        createdAt: '2025-03-12T16:45:00Z'
+        createdAt: '2025-09-12T16:45:00Z'
       }
     ],
     createdAt: '2025-03-12T10:15:00Z'
@@ -156,10 +156,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: '1st law: Object at rest stays at rest. 2nd law: F=ma. 3rd law: Every action has equal and opposite reaction.',
         author: { name: 'Nisha Pradhan', faculty: 'Science' },
         likes: 10,
-        createdAt: '2025-05-01T11:30:00Z'
+        createdAt: '2025-08-01T11:30:00Z'
       }
     ],
-    createdAt: '2025-05-01T09:00:00Z'
+    createdAt: '2025-08-01T09:00:00Z'
   },
   {
     id: '4',
@@ -176,7 +176,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: '6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂. Plants convert carbon dioxide and water into glucose using sunlight.',
         author: { name: 'Sunita Tamang', faculty: 'Science' },
         likes: 15,
-        createdAt: '2025-02-20T13:45:00Z'
+        createdAt: '2025-08-15T10:30:00Z'
       }
     ],
     createdAt: '2025-02-20T11:45:00Z'
@@ -196,10 +196,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'OOP organizes code into objects and classes. Inheritance allows code reuse, polymorphism enables multiple forms, encapsulation hides data.',
         author: { name: 'Dr. Kiran Adhikari', faculty: 'Science' },
         likes: 16,
-        createdAt: '2025-04-10T10:20:00Z'
+        createdAt: '2025-09-15T10:30:00Z'
       }
     ],
-    createdAt: '2025-04-10T08:20:00Z'
+    createdAt: '2025-09-15T10:30:00Z'
   },
   {
     id: '6',
@@ -216,10 +216,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'Methods include factoring, completing the square, and quadratic formula: x = (-b ± √(b²-4ac))/2a',
         author: { name: 'Suraj Pandey', faculty: 'Science' },
         likes: 11,
-        createdAt: '2025-06-05T15:00:00Z'
+        createdAt: '2025-08-05T15:00:00Z'
       }
     ],
-    createdAt: '2025-06-05T13:00:00Z'
+    createdAt: '2025-08-05T13:00:00Z'
   },
   {
     id: '7',
@@ -236,7 +236,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'Changing magnetic field induces electric current. Used in generators, transformers, and induction motors.',
         author: { name: 'Deepak Lamsal', faculty: 'Science' },
         likes: 12,
-        createdAt: '2025-07-19T18:10:00Z'
+        createdAt: '2025-09-19T18:10:00Z'
       }
     ],
     createdAt: '2025-07-19T16:10:00Z'
@@ -256,10 +256,10 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'Osmosis is water movement across membranes. Diffusion is movement of any substance from high to low concentration.',
         author: { name: 'Rajan Bhatta', faculty: 'Science' },
         likes: 9,
-        createdAt: '2025-08-22T14:00:00Z'
+        createdAt: '2025-07-22T14:00:00Z'
       }
     ],
-    createdAt: '2025-08-22T12:00:00Z'
+    createdAt: '2025-07-22T12:00:00Z'
   },
   {
     id: '9',
@@ -296,13 +296,13 @@ export function DataProvider({ children }: { children: ReactNode }) {
         content: 'Algorithms are step-by-step procedures. Data structures organize data efficiently. Choose based on time/space complexity requirements.',
         author: { name: 'Sushma Khatri', faculty: 'Science' },
         likes: 15,
-        createdAt: '2025-10-05T17:40:00Z'
+        createdAt: '2025-9-05T17:40:00Z'
       }
     ],
-    createdAt: '2025-10-05T15:40:00Z'
+    createdAt: '2025-9-05T15:40:00Z'
   },
 
-  // Management Faculty (10 questions - mixed subjects)
+ 
   {
     id: '11',
     title: 'What is double-entry bookkeeping?',
@@ -566,7 +566,6 @@ export function DataProvider({ children }: { children: ReactNode }) {
     createdAt: '2025-05-12T12:30:00Z'
   },
 
-  // Humanities Faculty (3 questions)
   {
     id: '24',
     title: 'What is social stratification?',
@@ -996,7 +995,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 245,
-    createdAt: '2025-08-16T10:20:00Z'
+    createdAt: '2025-09-16T10:20:00Z'
   },
   {
     id: '19',
@@ -1030,7 +1029,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 198,
     likes: 267,
-    createdAt: '2025-10-08T14:30:00Z'
+    createdAt: '2025-09-08T14:30:00Z'
   },
   {
     id: '21',
@@ -1047,7 +1046,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 234,
-    createdAt: '2025-03-15T11:20:00Z'
+    createdAt: '2025-09-15T11:20:00Z'
   },
   {
     id: '22',
@@ -1064,7 +1063,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 198,
-    createdAt: '2025-05-20T14:35:00Z'
+    createdAt: '2025-09-20T14:35:00Z'
   },
   {
     id: '23',
@@ -1081,7 +1080,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 167,
-    createdAt: '2025-07-10T16:45:00Z'
+    createdAt: '2025-09-10T16:45:00Z'
   },
   {
     id: '24',
@@ -1098,7 +1097,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 189,
-    createdAt: '2025-08-25T13:10:00Z'
+    createdAt: '2025-09-25T13:10:00Z'
   },
   {
     id: '25',
@@ -1132,7 +1131,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 189,
     likes: 245,
-    createdAt: '2025-04-18T12:40:00Z'
+    createdAt: '2025-09-18T12:40:00Z'
   },
   {
     id: '27',
@@ -1149,7 +1148,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 198,
-    createdAt: '2025-06-12T14:55:00Z'
+    createdAt: '2025-09-12T14:55:00Z'
   },
   {
     id: '28',
@@ -1166,7 +1165,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 167,
-    createdAt: '2025-07-28T16:20:00Z'
+    createdAt: '2025-09-28T16:20:00Z'
   },
   {
     id: '29',
@@ -1183,7 +1182,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 178,
     likes: 223,
-    createdAt: '2025-08-20T11:30:00Z'
+    createdAt: '2025-09-20T11:30:00Z'
   },
   {
     id: '30',
@@ -1217,7 +1216,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 167,
     likes: 234,
-    createdAt: '2025-02-28T10:15:00Z'
+    createdAt: '2025-09-28T10:15:00Z'
   },
   {
     id: '32',
@@ -1234,7 +1233,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 145,
     likes: 198,
-    createdAt: '2025-04-22T15:30:00Z'
+    createdAt: '2025-09-22T15:30:00Z'
   },
   {
     id: '33',
@@ -1251,7 +1250,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 134,
     likes: 176,
-    createdAt: '2025-06-18T12:20:00Z'
+    createdAt: '2025-09-18T12:20:00Z'
   },
   {
     id: '34',
@@ -1268,7 +1267,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 123,
     likes: 156,
-    createdAt: '2025-08-10T14:40:00Z'
+    createdAt: '2025-09-10T14:40:00Z'
   },
   {
     id: '35',
@@ -1285,7 +1284,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     },
     downloads: 156,
     likes: 201,
-    createdAt: '2025-10-25T16:55:00Z'
+    createdAt: '2025-09-25T16:55:00Z'
   }
 ];
     const sampleNews: NewsArticle[] = [
@@ -1294,7 +1293,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE CEE 2025 Application Opens - Registration Starts January 15',
     content: 'The Institute of Engineering (IOE) has announced that the Common Entrance Examination (CEE) 2025 applications will open from January 15, 2025. Students who have completed their +2 or equivalent can apply for undergraduate engineering programs. The examination is scheduled for April 2025.',
     excerpt: 'IOE CEE 2025 registration begins January 15 for engineering aspirants.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'IOE Administration',
     publishedAt: '2025-01-10T09:00:00Z',
     category: 'Entrance Exams'
@@ -1304,7 +1303,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'NEB Grade 12 Results 2024 Published - Check Your Results Online',
     content: 'The National Examinations Board (NEB) has published the Grade 12 examination results for 2024. Students can check their results online using their symbol number and date of birth on the official NEB website. The overall pass percentage this year is 68.34%.',
     excerpt: 'NEB Grade 12 results 2024 announced with 68.34% pass rate.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'NEB Official',
     publishedAt: '2024-12-20T10:30:00Z',
     category: 'NEB updates'
@@ -1314,7 +1313,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Prime Minister Scholarship 2025 - Applications Open for Undergraduate Studies',
     content: 'The Government of Nepal has announced the Prime Minister Employment Program Scholarship for 2025. Eligible students from marginalized communities can apply for full scholarships covering tuition fees, accommodation, and stipends for undergraduate programs in engineering, medicine, and other fields.',
     excerpt: 'PM Scholarship 2025 applications open for marginalized communities.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'Scholarship Department',
     publishedAt: '2025-01-05T08:00:00Z',
     category: 'Scholarships'
@@ -1324,7 +1323,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE Entrance Exam Pattern Changed - New Syllabus for CEE 2025',
     content: 'The Institute of Engineering has updated the entrance examination pattern for CEE 2025. The new format includes 120 multiple-choice questions covering Physics (40), Chemistry (30), Mathematics (40), and English (10). The examination duration remains 3 hours.',
     excerpt: 'IOE CEE 2025 introduces new exam pattern with updated syllabus.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'IOE Examination Board',
     publishedAt: '2024-12-15T14:00:00Z',
     category: 'Entrance Exams'
@@ -1334,7 +1333,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Medical College Admission Test (MCAT) 2025 Schedule Released',
     content: 'The Medical Education Commission has released the schedule for MCAT 2025. The entrance examination for MBBS and BDS programs will be held on March 30, 2025. Online registration starts from February 1 and closes on February 28, 2025.',
     excerpt: 'MCAT 2025 scheduled for March 30, registration begins February 1.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'Medical Education Commission',
     publishedAt: '2025-01-08T11:15:00Z',
     category: 'Entrance Exams'
@@ -1344,7 +1343,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Digital Nepal Education Summit 2025 - Transforming Learning',
     content: 'The Ministry of Education is organizing the Digital Nepal Education Summit 2025 in Kathmandu from February 15-17. The summit will focus on integrating technology in education, online learning platforms, and preparing students for the digital age.',
     excerpt: 'Digital Education Summit 2025 to be held in Kathmandu this February.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'Ministry of Education',
     publishedAt: '2025-01-12T16:30:00Z',
     category: 'Events'
@@ -1354,7 +1353,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'NEB Announces Class 11 Admission Guidelines for 2025',
     content: 'The National Examinations Board has published new admission guidelines for Class 11 enrollment in 2025. Students must secure a minimum GPA of 2.0 in SEE to be eligible for Science stream, while Management and Humanities require a GPA of 1.6.',
     excerpt: 'New Class 11 admission guidelines released by NEB for 2025.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'NEB Administration',
     publishedAt: '2024-12-28T13:20:00Z',
     category: 'NEB updates'
@@ -1364,7 +1363,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Study Abroad Fair 2025 - Opportunities in Australia and Canada',
     content: 'The International Education Consultancy Association is organizing a Study Abroad Fair from January 20-22, 2025, at Bhrikutimandap. Representatives from Australian and Canadian universities will provide information about undergraduate and graduate programs.',
     excerpt: 'Study Abroad Fair 2025 showcases opportunities in Australia and Canada.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'Education Consultancy Association',
     publishedAt: '2025-01-06T15:45:00Z',
     category: 'Other'
@@ -1374,7 +1373,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'Tips for Effective Exam Preparation - Expert Advice for Students',
     content: 'Education experts share valuable tips for effective exam preparation including time management, study techniques, stress management, and maintaining a healthy lifestyle during exam periods. These strategies can help students achieve better results.',
     excerpt: 'Expert tips for effective exam preparation and stress management.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'Education Expert Panel',
     publishedAt: '2024-12-25T12:00:00Z',
     category: 'General'
@@ -1384,7 +1383,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     title: 'IOE Introduces New Engineering Programs - AI and Data Science',
     content: 'The Institute of Engineering has announced two new undergraduate programs starting from 2025: Bachelor in Artificial Intelligence and Bachelor in Data Science. These programs aim to meet the growing demand for tech professionals in Nepal and internationally.',
     excerpt: 'IOE launches new AI and Data Science programs for 2025 intake.',
-    imageUrl: '#',
+    imageUrl: '',
     author: 'IOE Academic Council',
     publishedAt: '2025-01-03T10:00:00Z',
     category: 'NEB updates'

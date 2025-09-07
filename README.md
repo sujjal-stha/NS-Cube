@@ -1,69 +1,81 @@
-# React + TypeScript + Vite
+## Team NS-Cube ##
+**Members**
+-Neeraj Thapa
+-Samir Lamsal
+Sakshyam Ghimire
+-Sujjal Shrestha
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Project: StudyNet #
 
-Currently, two official plugins are available:
+StudyNet is a unified learning platform designed to solve the fragmented student learning experience.  
+Built with modern web technologies, StudyNet centralizes notes, Q&A, previous year questions (PYQs), AI-powered study support, and educational news — all in one place.
+Problems:
+Students often face **fragmented learning**:
+- Study resources are scattered across multiple platforms.
+- Difficulty accessing NEB syllabus–relevant resources.
+- Limited peer collaboration and verified academic support.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+Our Solution
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+StudyNet provides a **single, unified platform** for:
+- Notes, Q&A, PYQs, and news.  
+- Peer collaboration & verified academic discussions.  
+- AI-powered study support, summaries, and career guidance.  
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*Surveyed over 200 students*:  
+- **61% strongly agreed** on the need for a single platform.  
+- Clear demand for affordable tools, centralized resources, and peer collaboration.  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+#Features
+Feed Page
+- Latest posts, recent notes, hot questions.  
+- Personalized feed tailored to courses/faculty.  
+- Like, comment, and share for interactive engagement.  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Q&A Section
+- Post academic questions easily.  
+- Verified answers from peers & faculty.  
+- Organized discussions with search functionality.  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+AI Integration
+- Educational queries only.  
+- Summarizes long notes.  
+- Personalized study support & career counseling.  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+PYQ Section
+- Comprehensive past year question collection.  
+- Filter by subject, year, or faculty.  
+- Download for offline use.  
+
+Notes Section
+- Centralized notes hub.  
+- Upload, download, and collaborate.  
+- Organized and searchable.  
+
+News Section
+- Latest academic updates & faculty announcements.  
+- Course-specific alerts.  
+
+DND Feature
+- Focus mode to mute distractions.  
+- Customizable timing.  
+- Priority alerts enabled.  
+
+#Tech Stack
+
+- React.js – Dynamic, responsive UI.  
+- Firebase – Authentication, realtime database, cloud storage.  
+- Tailwind CSS– Modern, responsive design.  
+- Lucide React – Clean icons for a smooth experience.  
+
+How to run ?
+- Clone our repo or install zip file 
+- npm install 
+- sometimes, npm install vite too
+- npm run dev
+
+Thank You!!

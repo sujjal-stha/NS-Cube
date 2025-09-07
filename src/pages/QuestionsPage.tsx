@@ -49,11 +49,11 @@ export default function QuestionsPage() {
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Questions & Answers</h1>
           <p className="text-gray-600">Ask questions and help your peers in {user?.faculty}</p>
         </div>
-        <button
+                        <button
           onClick={() => setShowAskModal(true)}
           className="mt-4 sm:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2 transition-colors"
         >
-          <Plus className="h-4 w-4" />
+              <Plus className="h-4 w-4" />
           <span>Ask Question</span>
         </button>
       </div>
@@ -205,8 +205,7 @@ export default function QuestionsPage() {
                 },
                 faculty: user.faculty
               });
-              setShowAskModal(false);
-              // showNotification('Question posted successfully! 🎉', 'success');
+              setShowAskModal(false);   
             }
           }}
           userFaculty={user?.faculty || ''}
@@ -216,7 +215,6 @@ export default function QuestionsPage() {
   );
 }
 
-// Answer Form Component
 function AnswerForm({ onSubmit }: { onSubmit: (content: string) => void }) {
   const [content, setContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);

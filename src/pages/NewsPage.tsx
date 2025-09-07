@@ -11,7 +11,7 @@ export default function NewsPage() {
   // Filter news by search and category
   const filteredNews = news.filter(article => {
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = !filterCategory || article.category === filterCategory;
     return matchesSearch && matchesCategory;
   });
@@ -78,7 +78,7 @@ export default function NewsPage() {
           <span className="bg-white text-red-600 px-2 py-1 rounded text-xs font-bold animate-pulse">
             BREAKING
           </span>
-          <span className="font-medium">NEB announces new examination schedule for Class 12 students</span>
+          <span className="font-medium">Nepal bans Facebook, Twitter, WhatsApp and 23 other social media platforms</span>
         </div>
       </div>
 
@@ -140,8 +140,8 @@ export default function NewsPage() {
           <div className="bg-white rounded-lg border border-gray-200 p-6">
             <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
             <div className="space-y-3">
-              <a href="https://www.instagram.com/oxfordian_innovators/" className="block text-blue-600 hover:text-blue-700 text-sm">
-                Oxfordians Innovative Group
+              <a href="https://www.cyberutsav.com/" className="block text-blue-600 hover:text-blue-700 text-sm">
+                Cyber Utsav 2.0
               </a>
               <a href="https://www.neb.gov.np/" className="block text-blue-600 hover:text-blue-700 text-sm">
                 Nepal Examination Board
