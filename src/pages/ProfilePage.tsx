@@ -1,6 +1,7 @@
 import { User, Edit, BookOpen, MessageSquare, Heart, Trophy, Calendar, Mail, GraduationCap } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useData } from '../contexts/DataContext';
+import PremiumSection from "../components/PremiumSection";
 
 export default function ProfilePage(){
     const { user } = useAuth();
@@ -175,6 +176,9 @@ export default function ProfilePage(){
                                       </div>
                       </div>
                   </div>
+                   {}
+                  <br></br>
+                   <PremiumSection />
                   </div>
   );
 }   

@@ -82,7 +82,7 @@ export default function LandingPage() {
             <div className="mb-8">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-blue-100 px-4 py-2 rounded-full mb-4">
                 <span className="text-2xl">🎓</span>
-                <span className="text-purple-700 font-medium">Distraction kills toppers , StudyNet makes them.</span>
+                <span className="text-purple-700 font-medium">Unifying your learning experience.</span>
               </div>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight text-responsive">
